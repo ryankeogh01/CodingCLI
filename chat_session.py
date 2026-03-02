@@ -12,7 +12,7 @@ async def chat_loop():
             if user_message.lower() == 'exit':
                 break
 
-            response = await run_agent(user_message)
+            response = run_agent(user_message)
             print("\n" + str(response))
             
         except Exception as e:

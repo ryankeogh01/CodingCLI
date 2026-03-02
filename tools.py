@@ -36,4 +36,19 @@ write_file_function = {
     }
 }
 
-tools = types.Tool(function_declarations=[read_file_function, write_file_function])
+list_directory_funtion = {
+    "name": "list_directory",
+    "description": "List the directories at current path",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "path": {
+                "type": "string",
+                "description": "List the directories at the current path"
+            }
+        },
+        "required": ["path"]
+    }
+}
+
+tools = types.Tool(function_declarations=[read_file_function, write_file_function, list_directory_funtion])

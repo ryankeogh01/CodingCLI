@@ -51,4 +51,19 @@ list_directory_funtion = {
     }
 }
 
-tools = types.Tool(function_declarations=[read_file_function, write_file_function, list_directory_funtion])
+run_command_function = {
+    "name": "run_command",
+    "description": "Run a command in the terminal",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "command": {
+                "type": "string",
+                "description": "The command to be run"
+            },
+        },
+        "required": ["command"]
+    }
+}
+
+tools = types.Tool(function_declarations=[read_file_function, write_file_function, list_directory_funtion, run_command_function])

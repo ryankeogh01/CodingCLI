@@ -17,9 +17,9 @@ class Operations:
         with open(full_path, "w") as f:
             return f.write(content)
 
-    def run_command(self, path, command):
-        nav = subprocess.run("cd ", path)
-        com = subprocess.run(command, shell=True, capture_output = True, text=True)
+    def run_command(self, command):
+        """Runs commands from the terminal for the user"""
+        com = subprocess.run(command, shell=True, capture_output = True, text=True, cwd=self.cwd)
         return com.stdout + com.stderr
 
     def list_directory(self, path="."):
